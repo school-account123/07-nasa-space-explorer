@@ -53,10 +53,22 @@ function getSpaceImages() {
             <img src="${item.url}" alt="${item.title}" />
             <h3>${item.title}</h3>
             <p>${item.date}</p>
-            <p>${item.explanation}</p>
+            <button class="toggle-details" type="button">Show details</button>
+            <p class="image-description">${item.explanation}</p>
           </div>
         `;
       }).join('');
+
+      gallery.querySelectorAll('.toggle-details').forEach((button) => {
+        button.addEventListener('click', () => {
+          const description = button.nextElementSibling;
+          description.classList.toggle('visible');
+
+          button.textContent = description.classList.contains('visible')
+            ? 'Hide details'
+            : 'Show details';
+        });
+      });
     })
     .catch((error) => {
       console.error(error);

@@ -130,6 +130,24 @@ button:hover {
   font-size: 14px;
 }
 
+.toggle-details {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  color: #333;
+  cursor: pointer;
+}
+
+.image-description {
+  display: none;
+}
+
+.image-description.visible {
+  display: block;
+}
+
 /* Placeholder content */
 .placeholder {
   flex: 1 1 100%;
